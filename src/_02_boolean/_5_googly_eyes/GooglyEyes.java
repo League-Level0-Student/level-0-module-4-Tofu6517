@@ -3,12 +3,6 @@ package _02_boolean._5_googly_eyes;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-
-cat = loadImage("IMG_1987.webp");
-
-
-
-
 /*
  * Goal: Put googly eyes on a face!
  * 
@@ -43,10 +37,11 @@ cat = loadImage("IMG_1987.webp");
  *    to the boundary. Put this code before you draw the pupils.
  */
 public class GooglyEyes extends PApplet {
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
-    
+    static final int WIDTH = 570;
+    static final int HEIGHT = 570;
+
     PImage face;
+
     
     @Override
     public void settings() {
@@ -55,13 +50,27 @@ public class GooglyEyes extends PApplet {
     
     @Override
     public void setup() {
-
+    	face= loadImage("cat.jpg");
+    	
     }
 
     @Override
     public void draw() {
+    	 int x= mouseX;
+    	    int y= mouseY;
+    	background(face);
+     	fill(250,250,250);
+    	ellipse(160,270,150,150);
+    	ellipse(400,270,150,150);
+	   fill(0,0,0);
+    	ellipse(x,y,50,50);
+    	 fill(0,0,0);
+     	ellipse(x+230,y,50,50);
+		}
+		
+  
+    
 
-    }
 
     static public void main(String[] args) {
         PApplet.main(GooglyEyes.class.getName());

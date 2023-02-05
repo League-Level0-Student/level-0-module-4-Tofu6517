@@ -5,6 +5,7 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.JOptionPane;
 
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -38,8 +39,8 @@ import processing.core.PImage;
  *      playWhoohoo() method, otherwise call the playDoh() method.
  */
 public class WheresWaldo extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
+    static final int WIDTH = 1000;
+    static final int HEIGHT = 800;
 
     PImage waldo;
 
@@ -50,12 +51,22 @@ public class WheresWaldo extends PApplet {
 
     @Override
     public void setup() {
-        
+    	waldo = loadImage("waldo.jpg");
+    	waldo.resize(WIDTH, HEIGHT);
     }
 
     @Override
     public void draw() {
-        
+    	background(waldo);
+    	int x=mouseX;
+    	int y=mouseY;
+    	println(x);
+    	println(y);
+    	if(mousePressed) {
+    		if(x>=100 && x<=90 && y>=100 && y<=90) {
+    			JOptionPane.showInputDialog();
+    		}
+    	}
     }
 
     static public void main(String[] args) {
