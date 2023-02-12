@@ -63,8 +63,11 @@ public class WheresWaldo extends PApplet {
     	println(x);
     	println(y);
     	if(mousePressed) {
-    		if(x>=100 && x<=90 && y>=100 && y<=90) {
-    			JOptionPane.showInputDialog();
+    		if(x>=532 && x<=612 && y>=0 && y<=20) {
+    			playWhoohoo();
+    		}
+    		else {
+    			playDoh();
     		}
     	}
     }
